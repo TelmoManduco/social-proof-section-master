@@ -1,0 +1,141 @@
+/*
+## Colors
+
+### Primary
+
+Very Dark Magenta: hsl(300, 43%, 22%)
+Soft Pink: hsl(333, 80%, 67%)
+
+### Neutral
+
+Dark Grayish Magenta: hsl(303, 10%, 53%)
+Light Grayish Magenta: hsl(300, 24%, 96%)
+White: hsl(0, 0%, 100%)
+
+
+### Body Copy
+
+- Font size: 15px
+
+### Font
+
+- Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan)
+- Weights: 400, 500, 700
+*/
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root {
+    --dark-magenta: #502050;
+    --soft-pink: #ee68a4;
+    --dark-gray: #937b92;
+    --light-gray: #f7f2f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: .938rem;
+    font-family: "League Spartan", sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 550px;
+}
+
+.top-section {
+    margin-top: 3rem;
+    color: var(--dark-magenta);
+    font-weight: 900;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.text {
+    color: var(--dark-gray);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.rate-section {
+    margin: 2rem 0;
+}
+
+.rate {
+    background-color: var(--light-gray);
+    padding: 1rem 0;
+}
+
+.rate + .rate, .card + .card {
+    margin-top: 1.5rem;
+}
+
+.stars {
+    margin-bottom: 1rem;
+}
+
+.bottom-section {
+    margin-bottom: 3rem;
+}
+
+.card {
+    background-color: var(--dark-magenta);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.card .row {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.name-section {
+    margin-left: 1rem;
+}
+
+.user-status {
+    color: var(--soft-pink);
+    margin-top: .3rem;
+}
+
+.comment {
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+@media (min-width: 1000px) {
+
+    .container {
+        max-width: 1000px;
+    }
+
+    .text {
+        width: 75%;
+    }
+    .top-section .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .top-section .col {
+        flex: 1;
+    }
+}
