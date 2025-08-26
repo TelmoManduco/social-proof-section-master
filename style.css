@@ -1,141 +1,168 @@
-/*
-## Colors
-
-### Primary
-
-Very Dark Magenta: hsl(300, 43%, 22%)
-Soft Pink: hsl(333, 80%, 67%)
-
-### Neutral
-
-Dark Grayish Magenta: hsl(303, 10%, 53%)
-Light Grayish Magenta: hsl(300, 24%, 96%)
-White: hsl(0, 0%, 100%)
-
-
-### Body Copy
-
-- Font size: 15px
-
-### Font
-
-- Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan)
-- Weights: 400, 500, 700
-*/
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 :root {
-    --dark-magenta: #502050;
-    --soft-pink: #ee68a4;
-    --dark-gray: #937b92;
-    --light-gray: #f7f2f7;
+  --dark-magenta: #502050;
+  --soft-pink: #ee68a4;
+  --dark-gray: #937b92;
+  --light-gray: #f7f2f7;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-size: .938rem;
-    font-family: "League Spartan", sans-serif;
+  font-size: .938rem;
+  font-family: "League Spartan", sans-serif;
+  background-color: white;
+  color: var(--dark-magenta);
+  line-height: 1.4;
 }
 
 .container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 550px;
+  padding: 2rem 1.5rem;
+  max-width: 375px;
+  margin: 0 auto;
 }
 
-.top-section {
-    margin-top: 3rem;
-    color: var(--dark-magenta);
-    font-weight: 900;
-    text-align: center;
+/* ---------- INTRO ---------- */
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.title {
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    line-height: 1;
+.intro__title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 1rem;
 }
 
-.text {
-    color: var(--dark-gray);
-    font-weight: 600;
-    line-height: 1.5;
+.intro__text {
+  color: var(--dark-gray);
+  font-size: 1rem;
 }
 
-.rate-section {
-    margin: 2rem 0;
+/* ---------- RATINGS ---------- */
+.ratings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
-.rate {
-    background-color: var(--light-gray);
-    padding: 1rem 0;
+.rating {
+  background: var(--light-gray);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
 }
 
-.rate + .rate, .card + .card {
-    margin-top: 1.5rem;
+.rating__stars {
+  display: flex;
+  justify-content: center;
+  gap: .4rem;
+  margin-bottom: .6rem;
 }
 
-.stars {
-    margin-bottom: 1rem;
+.rating__stars img {
+  width: 16px;
+  height: 16px;
 }
 
-.bottom-section {
-    margin-bottom: 3rem;
+.rating__text {
+  font-weight: 700;
+  font-size: .95rem;
 }
 
-.card {
-    background-color: var(--dark-magenta);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 10px;
+/* ---------- TESTIMONIALS ---------- */
+
+.testimonials .col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.card .row {
+.testimonial {
+  background: var(--dark-magenta);
+  color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.testimonial__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.testimonial__info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.testimonial__role {
+  color: var(--soft-pink);
+  font-size: .85rem;
+}
+
+.testimonial__quote {
+  font-size: .95rem;
+  line-height: 1.4;
+}
+
+/* ---------- DESKTOP LAYOUT ---------- */
+@media (min-width: 1000px) {
+  .container {
+    max-width: 1100px;
+    padding: 4rem 2rem;
+  }
+
+.col {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .intro {
+    width: 38%;
+    text-align: left;
+  }
+
+  .intro__title {
+    font-size: 3rem;
+  }
+
+  .ratings {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rating {
     display: flex;
     align-items: center;
-}
+    gap: 1rem;
+    text-align: left;
+    padding: 1rem 2rem;
+  }
 
-img {
-    width: 40px;
-    border-radius: 50%;
-}
+  .rating:nth-child(1) { margin-left: 2rem; margin-right: 6rem;}
+  .rating:nth-child(2) { margin-left: 4rem; margin-right: 4rem;}
+  .rating:nth-child(3) { margin-left: 6rem;}
 
-.name-section {
-    margin-left: 1rem;
-}
+  .testimonials .col {
+    flex-direction: row;
+  }
 
-.user-status {
-    color: var(--soft-pink);
-    margin-top: .3rem;
-}
-
-.comment {
-    margin-top: 1rem;
-    line-height: 1.5;
-}
-
-@media (min-width: 1000px) {
-
-    .container {
-        max-width: 1000px;
-    }
-
-    .text {
-        width: 75%;
-    }
-    .top-section .row {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .top-section .col {
-        flex: 1;
-    }
+  .testimonial:nth-child(2) { margin-top: 2rem; }
+  .testimonial:nth-child(3) { margin-top: 4rem; }
 }
