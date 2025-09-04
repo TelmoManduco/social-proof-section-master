@@ -22,9 +22,8 @@ body {
 }
 
 .container {
-  padding: 2rem 1.5rem;
-  max-width: 375px;
   margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 /* ---------- INTRO ---------- */
